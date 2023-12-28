@@ -1,0 +1,303 @@
+[2023-11-14 05:08:37 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-11-14 05:08:37 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-11-14 05:08:37 +0000] [1] [INFO] Using worker: gevent
+[2023-11-14 05:08:38 +0000] [37] [INFO] Booting worker with pid: 37
+[2023-11-14 05:17:52 +0000] [1] [INFO] Handling signal: term
+[2023-11-14 05:17:52 +0000] [37] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 184, in _read_from_socket
+    raise socket.error(SERVER_CLOSED_CONNECTION_ERROR)
+OSError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 2952, in _execute
+    return command(*args)
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 636, in read_response
+    raise e
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 633, in read_response
+    response = self._parser.read_response()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 291, in read_response
+    response = self._buffer.readline()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 223, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 198, in _read_from_socket
+    (e.args,))
+redis.exceptions.ConnectionError: Error while reading from socket: ('Connection closed by server.',)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 493, in connect
+    sock = self._connect()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 550, in _connect
+    raise err
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 538, in _connect
+    sock.connect(socket_address)
+  File "/usr/local/lib/python3.7/site-packages/gevent/_socket3.py", line 335, in connect
+    raise error(err, strerror(err))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/workers/base_async.py", line 114, in handle_request
+    for item in respiter:
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/wsgi.py", line 507, in __next__
+    return self._next()
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/wrappers/base_response.py", line 45, in _iter_encoded
+    for item in iterable:
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 152, in generator
+    for item in gen:
+  File "/root/H1ve-master/CTFd/events/__init__.py", line 13, in gen
+    for event in current_app.events_manager.subscribe():
+  File "/root/H1ve-master/CTFd/utils/events/__init__.py", line 78, in subscribe
+    for message in pubsub.listen():
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 3045, in listen
+    response = self.handle_message(self.parse_response(block=True))
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 2974, in parse_response
+    return self._execute(connection, connection.read_response)
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 2959, in _execute
+    connection.connect()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to cache:6379. Connection refused.
+[2023-11-14 05:17:53 +0000] [37] [INFO] Worker exiting (pid: 37)
+[2023-11-14 05:17:53 +0000] [1] [INFO] Shutting down: Master
+[2023-11-14 05:18:22 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-11-14 05:18:22 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-11-14 05:18:22 +0000] [1] [INFO] Using worker: gevent
+[2023-11-14 05:18:22 +0000] [28] [INFO] Booting worker with pid: 28
+[2023-11-14 05:56:30 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-11-14 05:56:30 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-11-14 05:56:30 +0000] [1] [INFO] Using worker: gevent
+[2023-11-14 05:56:30 +0000] [25] [INFO] Booting worker with pid: 25
+[2023-11-29 15:49:23 +0000] [1] [INFO] Handling signal: term
+[2023-11-29 15:49:23 +0000] [25] [INFO] Worker exiting (pid: 25)
+[2023-11-29 15:49:23 +0000] [1] [INFO] Shutting down: Master
+[2023-11-29 16:08:53 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-11-29 16:08:53 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-11-29 16:08:53 +0000] [1] [INFO] Using worker: gevent
+[2023-11-29 16:08:53 +0000] [24] [INFO] Booting worker with pid: 24
+[2023-11-30 00:52:45 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-11-30 00:52:45 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-11-30 00:52:45 +0000] [1] [INFO] Using worker: gevent
+[2023-11-30 00:52:45 +0000] [26] [INFO] Booting worker with pid: 26
+[2023-12-14 02:02:14 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:26)
+[2023-12-14 02:02:14 +0000] [26] [INFO] Worker exiting (pid: 26)
+[2023-12-14 02:02:14 +0000] [56] [INFO] Booting worker with pid: 56
+[2023-12-14 02:04:58 +0000] [1] [INFO] Handling signal: term
+[2023-12-14 02:04:59 +0000] [56] [INFO] Worker exiting (pid: 56)
+[2023-12-14 02:04:59 +0000] [1] [INFO] Shutting down: Master
+[2023-12-14 02:06:23 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-14 02:06:23 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-14 02:06:23 +0000] [1] [INFO] Using worker: gevent
+[2023-12-14 02:06:23 +0000] [26] [INFO] Booting worker with pid: 26
+[2023-12-14 02:07:52 +0000] [1] [INFO] Handling signal: term
+[2023-12-14 02:07:52 +0000] [26] [INFO] Worker exiting (pid: 26)
+[2023-12-14 02:07:52 +0000] [1] [INFO] Shutting down: Master
+[2023-12-14 02:11:36 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-14 02:11:36 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-14 02:11:36 +0000] [1] [INFO] Using worker: gevent
+[2023-12-14 02:11:36 +0000] [24] [INFO] Booting worker with pid: 24
+[2023-12-14 03:14:37 +0000] [1] [INFO] Handling signal: term
+[2023-12-14 03:14:37 +0000] [24] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 184, in _read_from_socket
+    raise socket.error(SERVER_CLOSED_CONNECTION_ERROR)
+OSError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 2952, in _execute
+    return command(*args)
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 636, in read_response
+    raise e
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 633, in read_response
+    response = self._parser.read_response()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 291, in read_response
+    response = self._buffer.readline()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 223, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 198, in _read_from_socket
+    (e.args,))
+redis.exceptions.ConnectionError: Error while reading from socket: ('Connection closed by server.',)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 493, in connect
+    sock = self._connect()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 550, in _connect
+    raise err
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 538, in _connect
+    sock.connect(socket_address)
+  File "/usr/local/lib/python3.7/site-packages/gevent/_socket3.py", line 335, in connect
+    raise error(err, strerror(err))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/workers/base_async.py", line 114, in handle_request
+    for item in respiter:
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/wsgi.py", line 507, in __next__
+    return self._next()
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/wrappers/base_response.py", line 45, in _iter_encoded
+    for item in iterable:
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 152, in generator
+    for item in gen:
+  File "/root/H1ve-master/CTFd/events/__init__.py", line 13, in gen
+    for event in current_app.events_manager.subscribe():
+  File "/root/H1ve-master/CTFd/utils/events/__init__.py", line 78, in subscribe
+    for message in pubsub.listen():
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 3045, in listen
+    response = self.handle_message(self.parse_response(block=True))
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 2974, in parse_response
+    return self._execute(connection, connection.read_response)
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 2959, in _execute
+    connection.connect()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to cache:6379. Connection refused.
+[2023-12-14 03:14:37 +0000] [24] [INFO] Worker exiting (pid: 24)
+[2023-12-14 03:14:37 +0000] [1] [INFO] Shutting down: Master
+[2023-12-19 00:58:26 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-19 00:58:26 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-19 00:58:26 +0000] [1] [INFO] Using worker: gevent
+[2023-12-19 00:58:26 +0000] [26] [INFO] Booting worker with pid: 26
+[2023-12-19 02:25:10 +0000] [1] [INFO] Handling signal: term
+[2023-12-19 02:25:10 +0000] [26] [ERROR] Error handling request
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 184, in _read_from_socket
+    raise socket.error(SERVER_CLOSED_CONNECTION_ERROR)
+OSError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 2952, in _execute
+    return command(*args)
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 636, in read_response
+    raise e
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 633, in read_response
+    response = self._parser.read_response()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 291, in read_response
+    response = self._buffer.readline()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 223, in readline
+    self._read_from_socket()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 198, in _read_from_socket
+    (e.args,))
+redis.exceptions.ConnectionError: Error while reading from socket: ('Connection closed by server.',)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 493, in connect
+    sock = self._connect()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 550, in _connect
+    raise err
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 538, in _connect
+    sock.connect(socket_address)
+  File "/usr/local/lib/python3.7/site-packages/gevent/_socket3.py", line 335, in connect
+    raise error(err, strerror(err))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/workers/base_async.py", line 114, in handle_request
+    for item in respiter:
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/wsgi.py", line 507, in __next__
+    return self._next()
+  File "/usr/local/lib/python3.7/site-packages/werkzeug/wrappers/base_response.py", line 45, in _iter_encoded
+    for item in iterable:
+  File "/usr/local/lib/python3.7/site-packages/flask/helpers.py", line 152, in generator
+    for item in gen:
+  File "/root/H1ve-master/CTFd/events/__init__.py", line 13, in gen
+    for event in current_app.events_manager.subscribe():
+  File "/root/H1ve-master/CTFd/utils/events/__init__.py", line 78, in subscribe
+    for message in pubsub.listen():
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 3045, in listen
+    response = self.handle_message(self.parse_response(block=True))
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 2974, in parse_response
+    return self._execute(connection, connection.read_response)
+  File "/usr/local/lib/python3.7/site-packages/redis/client.py", line 2959, in _execute
+    connection.connect()
+  File "/usr/local/lib/python3.7/site-packages/redis/connection.py", line 498, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to cache:6379. Connection refused.
+[2023-12-19 02:25:11 +0000] [26] [INFO] Worker exiting (pid: 26)
+[2023-12-19 02:25:11 +0000] [1] [INFO] Shutting down: Master
+[2023-12-19 02:36:08 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-19 02:36:08 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-19 02:36:08 +0000] [1] [INFO] Using worker: gevent
+[2023-12-19 02:36:08 +0000] [26] [INFO] Booting worker with pid: 26
+[2023-12-20 05:55:43 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-20 05:55:43 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-20 05:55:43 +0000] [1] [INFO] Using worker: gevent
+[2023-12-20 05:55:43 +0000] [26] [INFO] Booting worker with pid: 26
+[2023-12-20 07:43:57 +0000] [1] [INFO] Handling signal: term
+[2023-12-20 07:43:57 +0000] [26] [INFO] Worker exiting (pid: 26)
+[2023-12-20 07:43:57 +0000] [1] [INFO] Shutting down: Master
+[2023-12-21 00:41:51 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-21 00:41:51 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-21 00:41:51 +0000] [1] [INFO] Using worker: gevent
+[2023-12-21 00:41:51 +0000] [26] [INFO] Booting worker with pid: 26
+[2023-12-25 05:45:02 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-25 05:45:02 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-25 05:45:02 +0000] [1] [INFO] Using worker: gevent
+[2023-12-25 05:45:02 +0000] [26] [INFO] Booting worker with pid: 26
+[2023-12-25 10:53:40 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-25 10:53:40 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-25 10:53:40 +0000] [1] [INFO] Using worker: gevent
+[2023-12-25 10:53:40 +0000] [24] [INFO] Booting worker with pid: 24
+[2023-12-26 00:46:05 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-26 00:46:05 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-26 00:46:05 +0000] [1] [INFO] Using worker: gevent
+[2023-12-26 00:46:05 +0000] [25] [INFO] Booting worker with pid: 25
+[2023-12-26 04:12:21 +0000] [25] [ERROR] Socket error processing request.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/workers/base_async.py", line 66, in handle
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/six.py", line 625, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/workers/base_async.py", line 56, in handle
+    self.handle_request(listener_name, req, client, addr)
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/workers/ggevent.py", line 160, in handle_request
+    addr)
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/workers/base_async.py", line 129, in handle_request
+    six.reraise(*sys.exc_info())
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/six.py", line 625, in reraise
+    raise value
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/workers/base_async.py", line 115, in handle_request
+    resp.write(item)
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/http/wsgi.py", line 353, in write
+    util.write(self.sock, arg, self.chunked)
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/util.py", line 303, in write
+    return write_chunk(sock, data)
+  File "/usr/local/lib/python3.7/site-packages/gunicorn/util.py", line 298, in write_chunk
+    sock.sendall(chunk)
+  File "/usr/local/lib/python3.7/site-packages/gevent/_socket3.py", line 458, in sendall
+    return _socketcommon._sendall(self, data_memory, flags)
+  File "/usr/local/lib/python3.7/site-packages/gevent/_socketcommon.py", line 374, in _sendall
+    timeleft = __send_chunk(socket, chunk, flags, timeleft, end)
+  File "/usr/local/lib/python3.7/site-packages/gevent/_socketcommon.py", line 303, in __send_chunk
+    data_sent += socket.send(chunk, flags)
+  File "/usr/local/lib/python3.7/site-packages/gevent/_socket3.py", line 439, in send
+    return _socket.socket.send(self._sock, data, flags)
+TimeoutError: [Errno 110] Operation timed out
+[2023-12-27 06:01:14 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-27 06:01:14 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-27 06:01:14 +0000] [1] [INFO] Using worker: gevent
+[2023-12-27 06:01:14 +0000] [26] [INFO] Booting worker with pid: 26
+[2023-12-27 10:40:42 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-27 10:40:42 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-27 10:40:42 +0000] [1] [INFO] Using worker: gevent
+[2023-12-27 10:40:42 +0000] [26] [INFO] Booting worker with pid: 26
+[2023-12-28 00:41:46 +0000] [1] [INFO] Starting gunicorn 19.9.0
+[2023-12-28 00:41:46 +0000] [1] [INFO] Listening at: http://0.0.0.0:4000 (1)
+[2023-12-28 00:41:46 +0000] [1] [INFO] Using worker: gevent
+[2023-12-28 00:41:46 +0000] [26] [INFO] Booting worker with pid: 26

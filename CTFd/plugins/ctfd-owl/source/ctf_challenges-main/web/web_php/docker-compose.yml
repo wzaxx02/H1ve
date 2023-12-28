@@ -1,0 +1,10 @@
+version: "2"
+services:
+  web:
+    build: .
+    image: web_php9
+    ports:
+      - 9999:80
+    volumes:
+      - "$PWD/flag:/flag"
+      
